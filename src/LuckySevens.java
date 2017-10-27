@@ -1,17 +1,28 @@
 public class LuckySevens {
     public static void main(String[] args) {
-        int lowerEnd = IO.readInt();
-        int upperEnd = IO.readInt();
         int count = 0;
-        if (lowerEnd > upperEnd)
-            IO.reportBadInput();
-        for (int i = lowerEnd; i < upperEnd + 1; i++) {
-            String s = Integer.toString(i);
-            if (s.indexOf("7") != -1)
-                count++;
+        System.out.print("Enter lower bound: ");
+        int lower = IO.readInt();
 
+        System.out.print("Enter upper bound: ");
+        int upper = IO.readInt();
+
+        if(lower > upper || upper < lower) {
+            IO.reportBadInput();
         }
+
+        for(int i = lower; i <= upper; i++) {
+            int term = Math.abs(i);
+            while(term > 0) {
+                if(term % 10 == 7) {
+                    count ++;
+                }
+
+                term /= 10;
+            }
+        }
+
         IO.outputIntAnswer(count);
     }
-}
 
+}
