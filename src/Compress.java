@@ -5,6 +5,7 @@ public class Compress {
 
     }
     public static String compress (String s){
+        //should ignore numbers and punctuation of any sort
         String temp="";
         int count = 0;
         String l= "";
