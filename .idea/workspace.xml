@@ -356,7 +356,7 @@
       <workItem from="1510352162833" duration="10638000" />
       <workItem from="1510417016329" duration="13018000" />
       <workItem from="1510466206527" duration="1078000" />
-      <workItem from="1510599432173" duration="2590000" />
+      <workItem from="1510599432173" duration="2617000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1509037822775</created>
@@ -414,11 +414,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510427407592</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="HW 4 finished">
+      <created>1510602274379</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1510602274379</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64387000" />
+    <option name="totallyTimeSpent" value="64414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="795" y="0" width="811" height="866" extended-state="0" />
@@ -495,7 +502,8 @@
     <MESSAGE value="HW 4" />
     <MESSAGE value="HW 4 w WordCount fixed" />
     <MESSAGE value=" WordCount fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value=" WordCount fixed" />
+    <MESSAGE value="HW 4 finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW 4 finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
