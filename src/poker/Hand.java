@@ -225,23 +225,45 @@ public class Hand {
 
         return triplet;
     }
+
     public boolean hasFlush() {
         int count = 0;
         boolean flush = false;
         for (int i = 0; i < hand.length; i++) {
-            int val = hand[i].getValue();
+            int val = hand[i].getSuit();
             for (int j = 0; j < hand.length; j++) {
                 if (j != i && hand[j].getSuit() == val)
                     count++;
                 else
                     return false;
-
+                f
             }
             if (count == 5)
                 flush = true;
         }
 
         return flush;
+    }
+
+    public boolean hasFullHouse() {
+        return hasTriplet() && numPairs() == 1;
+    }
+
+    public boolean hasFourOfAKind() {
+        int count = 0;
+        boolean four = false;
+        for (int i = 0; i < hand.length; i++) {
+            int val = hand[i].getValue();
+            for (int j = 0; j < hand.length; j++) {
+                if (j != i && hand[j].getValue() == val)
+                    count++;
+
+            }
+            if (count == 4)
+                four = true;
+        }
+
+        return four;
     }
 
 }
