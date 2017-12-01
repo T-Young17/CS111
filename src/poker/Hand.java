@@ -218,13 +218,13 @@ public class Hand {
         for (int i = 0; i < hand.length; i++) {
             int val = hand[i].getValue();
             for (int j = 0; j < hand.length; j++) {
-                if (j != i && hand[j].getValue() == val)
+                if (hand[j].getValue() == val)
                     count++;
                 if (count >= 3)
                     return true;
-                if (i != hand.length - 1 && j != hand.length && hand[i].getvalue() != hand[i + 1].getValue)
-                    count = 0;
+
             }
+            count = 0;
 
         }
         return false;
@@ -283,7 +283,9 @@ public class Hand {
 
     public boolean hasStraight() {
         sortByValue();
-        for (int i = 0; i < hand.length; i++) {
+        if (hand[0].getValue() == 1 && hand[1].getValue() == 10 && hand[2].getValue() == 11 && hand[3].getValue() == 12 && hand[4].getValue() == 13)
+            return true;
+        for (int=i = 0; i<hand.length; i++){
             if (hand[i].getValue() != hand[i + 1].getValue() - 1)
                 return false;
         }
@@ -379,40 +381,30 @@ public class Hand {
                 return 0;
         } else if (a == 6 && b == 6)
             return 0;
-        else if( a == 3 && b==3 || a == 5 && b==5 || a == 8 && b==8 ||a == 9 && b==9 ){
-            if(this.highestValue().getValue>h.highestValue().getValue())
+        else if (a == 3 && b == 3 || a == 5 && b == 5 || a == 8 && b == 8 || a == 9 && b == 9) {
+            if (this.highestValue().getValue > h.highestValue().getValue())
                 return 1;
-            if(this.highestValue().getValue<>h.highestValue().getValue())
-                return -1;
-            if(this.highestValue().getValue==h.highestValue().getValue())
+            if (this.highestValue().getValue <>h.highestValue().getValue())
+            return -1;
+            if (this.highestValue().getValue == h.highestValue().getValue())
                 return 0;
         }
-        if(this.hasFullHouse() && h.hasFullhours()){
+        if (this.hasFullHouse() && h.hasFullhours()) {
+            if (this.hand[2].getValue() > h.hand[2].getValue())
+                return 1;
+            else if (this.hand[2].getValue() < h.hand[2].getValue())
+                return -1;
+            else if (this.hand[2].getValue() == h.hand[2].getValue())
+                return 0;
 
         }
 
 
     }
 
-
-    private int lowPairVal() {
-        int count ==0;
-        int[] temp = new int[3];
-        int a = 0;
-        for (int i = 1; i < hand.length; i++) {
-            if (hand[i].getValue() == val && temp[1] != hand[i].getValue() && temp[2] != hand[i].getValue() && temp[0] != hand[i].getValue())
-                temp[a] = hand[i].getValue();
-        }
-        int val = temp[0];
-        for (int i = 1; i < 3; i++) {
-            if (val > temp[i])
-                val = temp[i];
-        }
-        return val;
-    }
 
     private int highPairVal() {
-        int count ==0;
+        int count = 0;
         int[] temp = new int[3];
         int a = 0;
         for (int i = 1; i < hand.length; i++) {
@@ -425,5 +417,8 @@ public class Hand {
                 val = temp[i];
         }
         return val;
+
     }
+
+
 }
