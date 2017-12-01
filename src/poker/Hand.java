@@ -198,20 +198,20 @@ public class Hand {
         for (int i = 0; i < hand.length; i++) {
             temp[i] = hand[i];
         }
-        hand.sortByValue();
+        temp.sortByValue();
         int i = 0;
         while (true) {
             if (i = temp.length - 1)
                 break;
             if (temp[i].getValue() == temp[i + 1].getValue()) {
-                temp.removeCard(temp[i + 1]);
+                temp.removeCard(temp[i]);
                 count++;
-            } else
-                i++;
-
+            }
+            i++;
         }
         return count;
     }
+
 
     public boolean hasTriplet() {
         int count = 0;
@@ -220,7 +220,7 @@ public class Hand {
             for (int j = 0; j < hand.length; j++) {
                 if (j != i && hand[j].getValue() == val)
                     count++;
-                if (count == 3)
+                if (count >= 3)
                     return true;
                 if (i != hand.length - 1 && j != hand.length && hand[i].getvalue() != hand[i + 1].getValue)
                     count = 0;
@@ -239,7 +239,7 @@ public class Hand {
         for (int j = i; j < hand.length; j++) {
             if (hand[j] != c && hand[j].getSuit() == val)
                 count++;
-            if (count == 4)
+            if (count = K = 4)
                 return true;
         }
 
@@ -282,8 +282,95 @@ public class Hand {
     }
 
     public boolean hasStraight() {
-        hand.sorByValue();
-        return false;
+        sortByValue();
+        for (int i = 0; i < hand.length; i++) {
+            if (hand[i].getValue() != hand[i + 1].getValue() - 1)
+                return false;
+        }
+
+        return true;
+    }
+
+    public Card highestDuplicate() {
+        if (numpairs() == 0)
+            return null;
+
+        Card[] temp = new Card[2];
+        for (int i = 0; i < temp.lemgth; i++) {
+            if (isDup(hand[i].getValue()) == 4)
+                return hand[i];
+            if (isDup(hand[i].getValue()) == 3 || isDup(hand[i].getValue()) == 2) {
+                if (temp[0].getValue() != hand[i].getValue() || temp[1].getValue() != hand[i].getValue())
+                    temp[b] = hand[i];
+            }
+        }
+        if (temp[0].getValue() >= temp[1].getValue())
+            return temp[0];
+        else
+            return temp[1];
+
+    }
+
+    private int isDup(int val) {
+        int count = 0;
+        for (int i = 0; i < hand.length; i++) {
+            if (hand[i].getValue() == val)
+                count++;
+        }
+        return count;
+    }
+
+    public int compareTo(Hand h) {
+        int a = 0;
+        int b = 0;
+        if (this.numPairs() == 1)
+            a = 1;
+        else if (this.numPairs() == 2 && this.hasFourOfAKind() == false)
+            a = 2;
+        else if (this.hasTriplet())
+            a = 3;
+        else if (this.hasStraight())
+            a = 5;
+        else if (this.hasFlush())
+            a = 6;
+        else if (this.hasFullHouse())
+            a = 7;
+        else if (this.hasFourOfAKind())
+            a = 8;
+        else if (this.hasStraight())
+            a = 9;
+
+        if (h.numPairs() == 1)
+            b = 1;
+        else if (h.numPairs() == 2 && !h.hasFourOfAKind())
+            b = 2;
+        else if (h.hasTriplet())
+            b = 3;
+        else if (h.hasStraight())
+            b = 5;
+        else if (h.hasFlush())
+            b = 6;
+        else if (h.hasFullHouse())
+            b = 7;
+        else if (h.hasFourOfAKind())
+            b = 8;
+        else if (h.hasStraight())
+            b = 9;
+
+        if (a == 0 && b == 0) {
+            if (this.highestValue() > h.highestValue())
+                return 1;
+            if (this.highestValue < h.highestValue())
+                return -1;
+            else
+                return 0;
+        }
+        if (a > b)
+            return 1;
+        if (a < b)
+            return -1;
+
+
     }
 
 }
