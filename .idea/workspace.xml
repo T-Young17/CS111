@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2dc1818-e7f0-4205-934f-523ff2a44620" name="Default" comment="">
+    <list default="true" id="f2dc1818-e7f0-4205-934f-523ff2a44620" name="Default" comment="higest val and compare to partially done">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/poker/Hand.java" afterPath="$PROJECT_DIR$/src/poker/Hand.java" />
     </list>
@@ -28,12 +28,11 @@
       <file leaf-file-name="Hand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/poker/Hand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="371" column="4" lean-forward="false" selection-start-line="371" selection-start-column="4" selection-end-line="371" selection-end-column="4" />
+            <state relative-caret-position="650">
+              <caret line="387" column="24" lean-forward="false" selection-start-line="387" selection-start-column="24" selection-end-line="387" selection-end-column="24" />
               <folding>
                 <element signature="method#numPairs#0;class#Hand#0" expanded="false" />
                 <element signature="method#hasTriplet#0;class#Hand#0" expanded="false" />
-                <element signature="method#hasFlush#0;class#Hand#0" expanded="false" />
                 <element signature="method#hasFourOfAKind#0;class#Hand#0" expanded="false" />
                 <element signature="method#highestValue#0;class#Hand#0" expanded="false" />
                 <element signature="method#hasStraight#0;class#Hand#0" expanded="false" />
@@ -69,6 +68,7 @@
       <find>sor</find>
       <find>a = 9;</find>
       <find>hig</find>
+      <find>highest</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -390,7 +390,7 @@
       <workItem from="1511836129865" duration="723000" />
       <workItem from="1511893439414" duration="5000" />
       <workItem from="1512075036511" duration="13731000" />
-      <workItem from="1512160352751" duration="5535000" />
+      <workItem from="1512160352751" duration="7477000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1509037822775</created>
@@ -518,11 +518,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512166309127</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="higest val and compare to partially done">
+      <created>1512166592376</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1512166592376</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100988000" />
+    <option name="totallyTimeSpent" value="102930000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1613" height="873" extended-state="6" />
@@ -931,12 +938,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/poker/Hand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="371" column="4" lean-forward="false" selection-start-line="371" selection-start-column="4" selection-end-line="371" selection-end-column="4" />
+        <state relative-caret-position="650">
+          <caret line="387" column="24" lean-forward="false" selection-start-line="387" selection-start-column="24" selection-end-line="387" selection-end-column="24" />
           <folding>
             <element signature="method#numPairs#0;class#Hand#0" expanded="false" />
             <element signature="method#hasTriplet#0;class#Hand#0" expanded="false" />
-            <element signature="method#hasFlush#0;class#Hand#0" expanded="false" />
             <element signature="method#hasFourOfAKind#0;class#Hand#0" expanded="false" />
             <element signature="method#highestValue#0;class#Hand#0" expanded="false" />
             <element signature="method#hasStraight#0;class#Hand#0" expanded="false" />

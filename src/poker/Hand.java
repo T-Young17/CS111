@@ -243,9 +243,9 @@ public class Hand {
                 return true;
         }
 
-    }
+
         return false;
-}
+    }
 
     public boolean hasFullHouse() {
         return hasTriplet() && numPairs() == 1;
@@ -337,7 +337,7 @@ public class Hand {
             a = 7;
         else if (this.hasFourOfAKind())
             a = 8;
-        else if (this.hasStraight())
+        else if (this.hasStraight() && this.hasFlush())
             a = 9;
 
         if (h.numPairs() == 1)
@@ -354,7 +354,7 @@ public class Hand {
             b = 7;
         else if (h.hasFourOfAKind())
             b = 8;
-        else if (h.hasStraight())
+        else if (h.hasStraight() && h.hasFlush())
             b = 9;
 
         if (a == 0 && b == 0) {
@@ -370,8 +370,57 @@ public class Hand {
         if (a < b)
             return -1;
 
+        if (a == 1 && b == 1) {
+            if (this.highPairVal() > h.highPairVal())
+                return 1;
+            if (this.highPairVal() < h.highPairVal())
+                return -1;
+            if (this.highPairVal() == h.highPairVal())
+                return 0;
+        } else if (a == 6 && b == 6)
+            return 0;
+        else if( a == 3 && b==3 || a == 5 && b==5 || a == 8 && b==8 ||a == 9 && b==9 ){
+            if(this.highestValue().getValue>h.highestValue().getValue())
+                return 1;
+            if(this.highestValue().getValue<>h.highestValue().getValue())
+                return -1;
+            if(this.highestValue().getValue==h.highestValue().getValue())
+                return 0;
+        }
 
 
     }
 
+
+    private int lowPairVal() {
+        int count ==0;
+        int[] temp = new int[3];
+        int a = 0;
+        for (int i = 1; i < hand.length; i++) {
+            if (hand[i].getValue() == val && temp[1] != hand[i].getValue() && temp[2] != hand[i].getValue() && temp[0] != hand[i].getValue())
+                temp[a] = hand[i].getValue();
+        }
+        int val = temp[0];
+        for (int i = 1; i < 3; i++) {
+            if (val > temp[i])
+                val = temp[i];
+        }
+        return val;
+    }
+
+    private int highPairVal() {
+        int count ==0;
+        int[] temp = new int[3];
+        int a = 0;
+        for (int i = 1; i < hand.length; i++) {
+            if (hand[i].getValue() == val && temp[1] != hand[i].getValue() && temp[2] != hand[i].getValue() && temp[0] != hand[i].getValue())
+                temp[a] = hand[i].getValue();
+        }
+        int val = temp[0];
+        for (int i = 1; i < 3; i++) {
+            if (val < temp[i])
+                val = temp[i];
+        }
+        return val;
+    }
 }
