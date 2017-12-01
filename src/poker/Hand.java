@@ -321,8 +321,8 @@ public class Hand {
     }
 
     public int compareTo(Hand h) {
-        int a = 0;
-        int b = 0;
+        int a = 0; //hand for one that is called on
+        int b = 0; //hand for h
         if (this.numPairs() == 1)
             a = 1;
         else if (this.numPairs() == 2 && this.hasFourOfAKind() == false)
@@ -358,9 +358,9 @@ public class Hand {
             b = 9;
 
         if (a == 0 && b == 0) {
-            if (this.highestValue() > h.highestValue())
+            if (this.highestValue().getValue() > h.highestValue().getValue())
                 return 1;
-            if (this.highestValue < h.highestValue())
+            if (this.highestValue().getValue() < h.highestValue().getValue())
                 return -1;
             else
                 return 0;
@@ -369,6 +369,7 @@ public class Hand {
             return 1;
         if (a < b)
             return -1;
+
 
 
     }

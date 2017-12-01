@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2dc1818-e7f0-4205-934f-523ff2a44620" name="Default" comment="fixed four of a kind and triple">
+    <list default="true" id="f2dc1818-e7f0-4205-934f-523ff2a44620" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/poker/Hand.java" afterPath="$PROJECT_DIR$/src/poker/Hand.java" />
     </list>
@@ -28,8 +28,8 @@
       <file leaf-file-name="Hand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/poker/Hand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-322">
-              <caret line="325" column="33" lean-forward="true" selection-start-line="325" selection-start-column="33" selection-end-line="325" selection-end-column="33" />
+            <state relative-caret-position="488">
+              <caret line="371" column="4" lean-forward="false" selection-start-line="371" selection-start-column="4" selection-end-line="371" selection-end-column="4" />
               <folding>
                 <element signature="method#numPairs#0;class#Hand#0" expanded="false" />
                 <element signature="method#hasTriplet#0;class#Hand#0" expanded="false" />
@@ -68,6 +68,7 @@
       <find>sort</find>
       <find>sor</find>
       <find>a = 9;</find>
+      <find>hig</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -389,7 +390,7 @@
       <workItem from="1511836129865" duration="723000" />
       <workItem from="1511893439414" duration="5000" />
       <workItem from="1512075036511" duration="13731000" />
-      <workItem from="1512160352751" duration="5227000" />
+      <workItem from="1512160352751" duration="5535000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1509037822775</created>
@@ -510,11 +511,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512104169328</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="higest val and compare to partially done">
+      <created>1512166309127</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1512166309127</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100680000" />
+    <option name="totallyTimeSpent" value="100988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1613" height="873" extended-state="6" />
@@ -596,7 +604,8 @@
     <MESSAGE value="poker project" />
     <MESSAGE value="highest value" />
     <MESSAGE value="fixed four of a kind and triple" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed four of a kind and triple" />
+    <MESSAGE value="higest val and compare to partially done" />
+    <option name="LAST_COMMIT_MESSAGE" value="higest val and compare to partially done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -922,8 +931,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/poker/Hand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
-          <caret line="325" column="33" lean-forward="true" selection-start-line="325" selection-start-column="33" selection-end-line="325" selection-end-column="33" />
+        <state relative-caret-position="488">
+          <caret line="371" column="4" lean-forward="false" selection-start-line="371" selection-start-column="4" selection-end-line="371" selection-end-column="4" />
           <folding>
             <element signature="method#numPairs#0;class#Hand#0" expanded="false" />
             <element signature="method#hasTriplet#0;class#Hand#0" expanded="false" />
