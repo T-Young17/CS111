@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2dc1818-e7f0-4205-934f-523ff2a44620" name="Default" comment="poker project">
+    <list default="true" id="f2dc1818-e7f0-4205-934f-523ff2a44620" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/poker/Hand.java" afterPath="$PROJECT_DIR$/src/poker/Hand.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="Hand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/poker/Hand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="255" column="41" lean-forward="true" selection-start-line="255" selection-start-column="41" selection-end-line="255" selection-end-column="41" />
+            <state relative-caret-position="596">
+              <caret line="274" column="54" lean-forward="true" selection-start-line="274" selection-start-column="54" selection-end-line="274" selection-end-column="54" />
               <folding>
                 <element signature="e#7022#7023#0" expanded="true" />
                 <element signature="e#7076#7077#0" expanded="true" />
@@ -382,7 +381,7 @@
       <workItem from="1511833878987" duration="749000" />
       <workItem from="1511836129865" duration="723000" />
       <workItem from="1511893439414" duration="5000" />
-      <workItem from="1512075036511" duration="5521000" />
+      <workItem from="1512075036511" duration="5587000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1509037822775</created>
@@ -482,11 +481,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511222319301</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="highest value">
+      <created>1512092390825</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1512092390826</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85867000" />
+    <option name="totallyTimeSpent" value="85933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1613" height="873" extended-state="6" />
@@ -566,7 +572,8 @@
     <MESSAGE value="HW 4 finished" />
     <MESSAGE value="Exam 2 practice" />
     <MESSAGE value="poker project" />
-    <option name="LAST_COMMIT_MESSAGE" value="poker project" />
+    <MESSAGE value="highest value" />
+    <option name="LAST_COMMIT_MESSAGE" value="highest value" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -892,8 +899,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/poker/Hand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="255" column="41" lean-forward="true" selection-start-line="255" selection-start-column="41" selection-end-line="255" selection-end-column="41" />
+        <state relative-caret-position="596">
+          <caret line="274" column="54" lean-forward="true" selection-start-line="274" selection-start-column="54" selection-end-line="274" selection-end-column="54" />
           <folding>
             <element signature="e#7022#7023#0" expanded="true" />
             <element signature="e#7076#7077#0" expanded="true" />
