@@ -201,13 +201,14 @@ public class Hand {
         hand.sortByValue();
         int i = 0;
         while (true) {
+            if (i = temp.length - 1)
+                break;
             if (temp[i].getValue() == temp[i + 1].getValue()) {
-                temp.removeCard(temp[i+1]);
+                temp.removeCard(temp[i + 1]);
                 count++;
             } else
                 i++;
-            if(i = temp.length)
-                break;
+
         }
         return count;
     }
@@ -219,8 +220,10 @@ public class Hand {
             for (int j = 0; j < hand.length; j++) {
                 if (j != i && hand[j].getValue() == val)
                     count++;
-                if (count == 2 )
+                if (count == 3)
                     return true;
+                if (i != hand.length - 1 && j != hand.length && hand[i].getvalue() != hand[i + 1].getValue)
+                    count = 0;
             }
 
         }
@@ -238,7 +241,6 @@ public class Hand {
                 count++;
             if (count == 4)
                 return true;
-
         }
 
     }
@@ -257,9 +259,10 @@ public class Hand {
             for (int j = 0; j < hand.length; j++) {
                 if (j != i && hand[j].getValue() == val)
                     count++;
-                if (count == 3)
+                if (count == 4)
                     return true;
-
+                if (i != hand.length - 1 && j != hand.length && hand[i].getvalue() != hand[i + 1].getValue)
+                    count = 0;
             }
 
         }
@@ -269,15 +272,18 @@ public class Hand {
 
     public Card highestValue() {
         Card temp = hand[0];
-        for (int i =1; i< hand.length; i++) {
-            if (card.getValue()==1)
+        for (int i = 1; i < hand.length; i++) {
+            if (card.getValue() == 1)
                 return hand[i];
-            else if(card.getValue() > temp.getValue())
+            else if (card.getValue() > temp.getValue())
                 temp = hand[i];
         }
         return temp;
     }
 
-    public
+    public boolean hasStraight() {
+        hand.sorByValue();
+        return false;
+    }
 
 }
