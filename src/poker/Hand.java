@@ -193,57 +193,57 @@ public class Hand {
     /******************************** Implement your methods here ****************************************/
     //counts number of pairs in the hand
     public int numPairs() {
+        Card[] temp = new Card[5];
         int count = 0;
-        int pairs = 0;
         for (int i = 0; i < hand.length; i++) {
-            int val = hand[i].getValue();
-            for (int j = 0; j < hand.length; j++) {
-                if (j != i && hand[j].getValue() == val)
-                    count++;
-
-            }
-            if (count == 2)
-                pairs++;
+            temp[i] = hand[i];
         }
-
-        return pairs;
+        hand.sortByValue();
+        int i = 0;
+        while (true) {
+            if (temp[i].getValue() == temp[i + 1].getValue()) {
+                temp.removeCard(temp[i+1]);
+                count++;
+            } else
+                i++;
+            if(i = temp.length)
+                break;
+        }
+        return count;
     }
 
     public boolean hasTriplet() {
         int count = 0;
-        boolean triplet = false;
         for (int i = 0; i < hand.length; i++) {
             int val = hand[i].getValue();
             for (int j = 0; j < hand.length; j++) {
                 if (j != i && hand[j].getValue() == val)
                     count++;
-
+                if (count == 2 )
+                    return true;
             }
-            if (count == 3)
-                triplet = true;
-        }
 
-        return triplet;
+        }
+        return false;
     }
 
     public boolean hasFlush() {
         int count = 0;
         boolean flush = false;
-        for (int i = 0; i < hand.length; i++) {
-            int val = hand[i].getSuit();
-            for (int j = 0; j < hand.length; j++) {
-                if (j != i && hand[j].getSuit() == val)
-                    count++;
-                else
-                    return false;
-                f
-            }
-            if (count == 5)
-                flush = true;
+        Card c = han[0]
+
+        int val = hand[0].getSuit();
+        for (int j = i; j < hand.length; j++) {
+            if (hand[j] != c && hand[j].getSuit() == val)
+                count++;
+            if (count == 4)
+                return true;
+
         }
 
-        return flush;
     }
+        return false;
+}
 
     public boolean hasFullHouse() {
         return hasTriplet() && numPairs() == 1;
@@ -257,13 +257,27 @@ public class Hand {
             for (int j = 0; j < hand.length; j++) {
                 if (j != i && hand[j].getValue() == val)
                     count++;
+                if (count == 3)
+                    return true;
 
             }
-            if (count == 4)
-                four = true;
+
         }
 
         return four;
     }
+
+    public Card highestValue() {
+        Card temp = hand[0];
+        for (int i =1; i< hand.length; i++) {
+            if (card.getValue()==1)
+                return hand[i];
+            else if(card.getValue() > temp.getValue())
+                temp = hand[i];
+        }
+        return temp;
+    }
+
+    public
 
 }
