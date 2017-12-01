@@ -387,6 +387,9 @@ public class Hand {
             if(this.highestValue().getValue==h.highestValue().getValue())
                 return 0;
         }
+        if(this.hasFullHouse() && h.hasFullhours()){
+
+        }
 
 
     }
