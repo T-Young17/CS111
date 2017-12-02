@@ -272,8 +272,6 @@ public class Hand {
     public Card highestValue() {
         sortByValue();
         Card temp = hand[0];
-        if (hasStraight() && hand[0].getValue() == 1 && hand[1].getValue() == 2)
-            return hand[4];
         for (int i = 1; i < hand.length; i++) {
             if (hand[i].getValue() == 1)
                 return hand[i];
@@ -301,21 +299,14 @@ public class Hand {
 
         Card[] temp = new Card[2];
         int b = 0;
-        for (int i = 0; i < temp.length; i++) {
-            if (isDup(hand[i].getValue()) == 4)
-                return hand[i];
-            if (isDup(hand[i].getValue()) == 3 || isDup(hand[i].getValue()) == 2) {
-                if (temp[0].getValue() != hand[i].getValue() || temp[1].getValue() != hand[i].getValue()) {
-                    temp[b] = hand[i];
-                    b++;
-                }
-            }
+        if (numPairs() == 0)
+            return null;
+        Card max = hand[0];
+        for (int i = 0; i < hand.length; i++) {
+            if (isDup(hand[i].getValue()) >= 2 && hand[i].getValue() > max.getValue())
+                max = hand[i];
         }
-        if (temp[0].getValue() >= temp[1].getValue())
-            return temp[0];
-        else
-            return temp[1];
-
+        return max;
     }
 
     private int isDup(int val) {
@@ -410,7 +401,7 @@ public class Hand {
                     return 1;
                 if (Hand.maxArr(this.nonTripVal()) < Hand.maxArr(h.nonTripVal()))
                     return -1;
-                if (Hand.maxArr(this.nonTripVal()) == Hand.maxArr(h.nonTripVal())){
+                if (Hand.maxArr(this.nonTripVal()) == Hand.maxArr(h.nonTripVal())) {
                     int[] x = this.nonTripVal();
                     int[] y = h.nonTripVal();
                     if (Hand.maxArr2(this.nonTripVal()) > Hand.maxArr2(h.nonTripVal()))
@@ -473,7 +464,7 @@ public class Hand {
 
         }
 
-        return 12;
+        return -1;
     }
 
 

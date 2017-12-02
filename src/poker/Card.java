@@ -1,3 +1,4 @@
+
 /**
  * An object of type Card represents a playing card from a
  * standard Poker deck, including Jokers.  The card has a suit, which
@@ -8,7 +9,6 @@
  * this value can be anything and can be used to keep track of several
  * different jokers.
  */
-
 
 public class Card {
 
