@@ -3,7 +3,6 @@
  * cards belong to the class Card.  A hand is empty when it
  * is created, and any number of cards can be added to it.
  */
-package poker;
 
 import java.util.ArrayList;
 
@@ -233,13 +232,13 @@ public class Hand {
     public boolean hasFlush() {
         int count = 0;
         boolean flush = false;
-        Card c = han[0]
+        Card c = hand[0];
 
         int val = hand[0].getSuit();
         for (int j = i; j < hand.length; j++) {
             if (hand[j] != c && hand[j].getSuit() == val)
                 count++;
-            if (count = K = 4)
+            if (count == 4)
                 return true;
         }
 
@@ -285,8 +284,8 @@ public class Hand {
         sortByValue();
         if (hand[0].getValue() == 1 && hand[1].getValue() == 10 && hand[2].getValue() == 11 && hand[3].getValue() == 12 && hand[4].getValue() == 13)
             return true;
-        for (int=i = 0; i<hand.length; i++){
-            if (hand[i].getValue() != hand[i + 1].getValue() - 1)
+        for (int i = 0; i < hand.length; i++) {
+            if (i < hand.length - 1 && hand[i].getValue() != hand[i + 1].getValue() - 1)
                 return false;
         }
 
@@ -294,16 +293,19 @@ public class Hand {
     }
 
     public Card highestDuplicate() {
-        if (numpairs() == 0)
+        if (numPairs() == 0)
             return null;
 
         Card[] temp = new Card[2];
-        for (int i = 0; i < temp.lemgth; i++) {
+        int b = 0;
+        for (int i = 0; i < temp.length; i++) {
             if (isDup(hand[i].getValue()) == 4)
                 return hand[i];
             if (isDup(hand[i].getValue()) == 3 || isDup(hand[i].getValue()) == 2) {
-                if (temp[0].getValue() != hand[i].getValue() || temp[1].getValue() != hand[i].getValue())
+                if (temp[0].getValue() != hand[i].getValue() || temp[1].getValue() != hand[i].getValue()) {
                     temp[b] = hand[i];
+                    b++;
+                }
             }
         }
         if (temp[0].getValue() >= temp[1].getValue())
@@ -327,9 +329,9 @@ public class Hand {
         int b = 0; //hand for h
         if (this.numPairs() == 1)
             a = 1;
-        else if (this.numPairs() == 2 && this.hasFourOfAKind() == false)
+        else if (this.numPairs() == 2 && !this.hasFourOfAKind())
             a = 2;
-        else if (this.hasTriplet())
+        else if (this.hasTriplet() &&)
             a = 3;
         else if (this.hasStraight())
             a = 5;
@@ -382,20 +384,18 @@ public class Hand {
         } else if (a == 6 && b == 6)
             return 0;
         else if (a == 3 && b == 3 || a == 5 && b == 5 || a == 8 && b == 8 || a == 9 && b == 9) {
-            if (this.highestValue().getValue > h.highestValue().getValue())
+            if (this.highestValue().getValue() > h.highestValue().getValue())
                 return 1;
-            if (this.highestValue().getValue <>h.highestValue().getValue())
-            return -1;
-            if (this.highestValue().getValue == h.highestValue().getValue())
+            if (this.highestValue().getValue() < h.highestValue().getValue())
+                return -1;
+            if (this.highestValue().getValue() == h.highestValue().getValue())
                 return 0;
         }
-        if (this.hasFullHouse() && h.hasFullhours()) {
+        if (this.hasFullHouse() && h.hasFullHouse()) {
             if (this.hand[2].getValue() > h.hand[2].getValue())
                 return 1;
             else if (this.hand[2].getValue() < h.hand[2].getValue())
                 return -1;
-            else if (this.hand[2].getValue() == h.hand[2].getValue())
-                return 0;
 
         }
 
@@ -404,11 +404,14 @@ public class Hand {
 
 
     private int highPairVal() {
+        sortByValue();
         int count = 0;
         int[] temp = new int[3];
         int a = 0;
-        for (int i = 1; i < hand.length; i++) {
-            if (hand[i].getValue() == val && temp[1] != hand[i].getValue() && temp[2] != hand[i].getValue() && temp[0] != hand[i].getValue())
+        int val = 0;
+
+        for (int i = 0; i < hand.length; i++) {
+            if (hand[i].getValue() == hand[i + 1].getValue() && hand[i].getValue() != temp[0] && hand[i].getValue() != temp[1] && hand[i].getValue() != temp[2])
                 temp[a] = hand[i].getValue();
         }
         int val = temp[0];

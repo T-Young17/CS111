@@ -9,7 +9,7 @@
  * different jokers.
  */
 
-package poker;
+
 public class Card {
 
     public final static int SPADES = 0;   // Codes for the 4 suits, plus Joker.
