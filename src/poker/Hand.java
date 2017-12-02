@@ -194,7 +194,7 @@ public class Hand {
     //counts number of pairs in the hand
     public int numPairs() {
         sortByValue();
-        Card [] temp = new Card[5];
+        Card[] temp = new Card[5];
         int count = 0;
         for (int i = 0; i < hand.length; i++) {
             temp[i] = hand[i];
@@ -204,7 +204,6 @@ public class Hand {
             if (i == temp.length - 1)
                 break;
             if (temp[i].getValue() == temp[i + 1].getValue()) {
-                temp[i]=null;
                 count++;
             }
             i++;
@@ -237,14 +236,11 @@ public class Hand {
 
         int val = hand[0].getSuit();
         for (int j = 1; j < hand.length; j++) {
-            if (hand[j] != c && hand[j].getSuit() == val)
-                count++;
-            if (count == 4)
-                return true;
+            if (hand[j].getSuit() != val)
+                return false;
+
         }
-
-
-        return false;
+        return true;
     }
 
     public boolean hasFullHouse() {
@@ -252,26 +248,27 @@ public class Hand {
     }
 
     public boolean hasFourOfAKind() {
+        sortByValue();
         int count = 0;
-        boolean four = false;
         for (int i = 0; i < hand.length; i++) {
             int val = hand[i].getValue();
             for (int j = 0; j < hand.length; j++) {
-                if (j != i && hand[j].getValue() == val)
+                if (hand[j].getValue() == val)
                     count++;
                 if (count == 4)
                     return true;
-                if (i != hand.length - 1 && j != hand.length && hand[i].getValue() != hand[i + 1].getValue())
-                    count = 0;
+
             }
-
+            count = 0;
         }
-
-        return four;
+        return false;
     }
 
     public Card highestValue() {
+        sortByValue();
         Card temp = hand[0];
+        if (hasStraight() && hand[0].getValue() == 1 && hand[1].getValue() == 2)
+            return hand[4];
         for (int i = 1; i < hand.length; i++) {
             if (hand[i].getValue() == 1)
                 return hand[i];
@@ -332,11 +329,11 @@ public class Hand {
             a = 1;
         else if (this.numPairs() == 2 && !this.hasFourOfAKind())
             a = 2;
-        else if (this.hasTriplet() && this.numPairs()==0)
+        else if (this.hasTriplet() && this.numPairs() == 0)
             a = 3;
-        else if (this.hasStraight())
+        else if (this.hasStraight() && !this.hasFlush())
             a = 5;
-        else if (this.hasFlush())
+        else if (this.hasFlush() && !this.hasStraight())
             a = 6;
         else if (this.hasFullHouse())
             a = 7;
@@ -344,23 +341,27 @@ public class Hand {
             a = 8;
         else if (this.hasStraight() && this.hasFlush())
             a = 9;
+        else if (this.hasRoyalFlush())
+            a=10;
 
         if (h.numPairs() == 1)
             b = 1;
-        else if (h.numPairs() == 2 && !h.hasFourOfAKind())
+        else if (h.numPairs() == 2 && !(h.hasFourOfAKind()))
             b = 2;
-        else if (h.hasTriplet())
+        else if (h.hasTriplet() && h.numPairs() == 0)
             b = 3;
-        else if (h.hasStraight())
+        else if (h.hasStraight() && !(h.hasFlush()))
             b = 5;
-        else if (h.hasFlush())
+        else if (h.hasFlush() && !(h.hasStraight()))
             b = 6;
         else if (h.hasFullHouse())
             b = 7;
         else if (h.hasFourOfAKind())
             b = 8;
-        else if (h.hasStraight() && h.hasFlush())
+        else if (h.hasStraight() && h.hasFlush() && !(h.hasRoyalFlush()))
             b = 9;
+        else if (h.hasRoyalFlush())
+            b=10;
 
         if (a == 0 && b == 0) {
             if (this.highestValue().getValue() > h.highestValue().getValue())
@@ -382,14 +383,14 @@ public class Hand {
                 return -1;
             if (this.highPairVal() == h.highPairVal())
                 return 0;
-        } else if (a == 6 && b == 6){
+        } else if (a == 6 && b == 6) {
             if (this.highestValue().getValue() > h.highestValue().getValue())
                 return 1;
             if (this.highestValue().getValue() < h.highestValue().getValue())
                 return -1;
             else
-                return 0;}
-        else if (a == 3 && b == 3 || a == 5 && b == 5 || a == 8 && b == 8 || a == 9 && b == 9) {
+                return 0;
+        } else if (a == 3 && b == 3 || a == 5 && b == 5 || a == 8 && b == 8 || a == 9 && b == 9) {
             if (this.highestValue().getValue() > h.highestValue().getValue())
                 return 1;
             if (this.highestValue().getValue() < h.highestValue().getValue())
@@ -397,27 +398,27 @@ public class Hand {
             if (this.highestValue().getValue() == h.highestValue().getValue())
                 return 0;
         }
-        if (a==7 && b==7) {
+        if (a == 7 && b == 7) {
             if (this.hand[2].getValue() > h.hand[2].getValue())
                 return 1;
             else if (this.hand[2].getValue() < h.hand[2].getValue())
                 return -1;
         }
 
-        if(a==2 && b==2){
+        if (a == 2 && b == 2) {
             if (this.highPairVal() > h.highPairVal())
                 return 1;
             if (this.highPairVal() < h.highPairVal())
                 return -1;
-            if (this.highPairVal() == h.highPairVal()){
+            if (this.highPairVal() == h.highPairVal()) {
                 if (this.lowPairVal() > h.lowPairVal())
                     return 1;
                 if (this.lowPairVal() < h.lowPairVal())
                     return -1;
-                if (this.highPairVal() == h.highPairVal()){
+                if (this.highPairVal() == h.highPairVal()) {
                     if (this.nonPairVal() > h.nonPairVal())
                         return 1;
-                    if (this.nonPairVal()< h.nonPairVal())
+                    if (this.nonPairVal() < h.nonPairVal())
                         return -1;
                     if (this.nonPairVal() == h.nonPairVal())
                         return 0;
@@ -438,11 +439,11 @@ public class Hand {
 
 
         for (int i = 0; i < hand.length; i++) {
-            if (hand[i].getValue() == hand[i + 1].getValue() && hand[i].getValue() != temp[0] && hand[i].getValue() != temp[1] && hand[i].getValue() != temp[2]){
+            if (hand[i].getValue() == hand[i + 1].getValue() && hand[i].getValue() != temp[0] && hand[i].getValue() != temp[1] && hand[i].getValue() != temp[2]) {
                 temp[a] = hand[i].getValue();
-                temp[a+1]=hand[i].getValue();
+                temp[a + 1] = hand[i].getValue();
                 a++;
-        }
+            }
         }
         int val = temp[0];
         for (int i = 1; i < 3; i++) {
@@ -452,18 +453,17 @@ public class Hand {
         return val;
 
     }
+
     private int lowPairVal() {
         sortByValue();
         int count = 0;
-        int[] temp = new int[4];
+        int[] temp = new int[3];
         int a = 0;
-
-
         for (int i = 0; i < hand.length; i++) {
-            if (hand[i].getValue() == hand[i + 1].getValue() && hand[i].getValue() != temp[0] && hand[i].getValue() != temp[1] && hand[i].getValue() != temp[2]){
+            if (hand[i].getValue() == hand[i + 1].getValue() && hand[i].getValue() != temp[0] && hand[i].getValue() != temp[1] && hand[i].getValue() != temp[2]) {
                 temp[a] = hand[i].getValue();
-                temp[a+1]=hand[i].getValue();
                 a++;
+                i++;
             }
         }
         int val = temp[0];
@@ -474,29 +474,29 @@ public class Hand {
         return val;
 
     }
+
     private int nonPairVal() {
         sortByValue();
         int count = 0;
-        int[] temp = new int[4];
-        int a = 0;
-
-
+        int val = -1;
         for (int i = 0; i < hand.length; i++) {
-            if (hand[i].getValue() == hand[i + 1].getValue() && hand[i].getValue() != temp[0] && hand[i].getValue() != temp[1] && hand[i].getValue() != temp[2]){
-                temp[a] = hand[i].getValue();
-                temp[a+1]=hand[i].getValue();
-                a++;
-            }
+            val = hand[i].getValue();
+            if ((i != 0 || i != 4) && (val != hand[i + 1].getValue() || hand[i - 1].getValue() != val))
+                return val;
+            if (i == 0 && val != hand[i + 1].getValue())
+                return val;
+            if (i == 4 && val != hand[i - 1].getValue())
+                return val;
         }
-        int val = 0;
-        for (int i = 1; i < 3; i++) {
-            if (val != temp[i])
-                val = temp[i];
-        }
-        return val;
+        return -1;
 
     }
 
-
+    private boolean hasRoyalFlush() {
+        sortByValue();
+        if (hasStraight() && hasFlush() && hand[0].getValue() == 1 && hand[4].getValue() == 13 && hand[1].getValue() == 11 && hand[0].getValue() == 10 && hand[3].getValue() == 12)
+            return true;
+        return false;
+    }
 
 }
