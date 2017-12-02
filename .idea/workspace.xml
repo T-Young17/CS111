@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f2dc1818-e7f0-4205-934f-523ff2a44620" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/poker/Card.java" afterPath="$PROJECT_DIR$/src/poker/Card.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/poker/Hand.java" afterPath="$PROJECT_DIR$/src/poker/Hand.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,8 +18,8 @@
       <file leaf-file-name="Card.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/poker/Card.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="101" column="15" lean-forward="false" selection-start-line="101" selection-start-column="15" selection-end-line="101" selection-end-column="15" />
+            <state relative-caret-position="18">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -29,12 +28,10 @@
       <file leaf-file-name="Hand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/poker/Hand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="418" column="21" lean-forward="false" selection-start-line="418" selection-start-column="21" selection-end-line="418" selection-end-column="21" />
+            <state relative-caret-position="470">
+              <caret line="407" column="39" lean-forward="false" selection-start-line="407" selection-start-column="39" selection-end-line="407" selection-end-column="39" />
               <folding>
-                <element signature="method#numPairs#0;class#Hand#0" expanded="false" />
                 <element signature="method#hasFourOfAKind#0;class#Hand#0" expanded="false" />
-                <element signature="method#highestValue#0;class#Hand#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -69,6 +66,9 @@
       <find>hig</find>
       <find>highest</find>
       <find>if ()</find>
+      <find>temp.remove</find>
+      <find>card</find>
+      <find>getvalue</find>
       <find>cas</find>
     </findStrings>
   </component>
@@ -391,7 +391,7 @@
       <workItem from="1511836129865" duration="723000" />
       <workItem from="1511893439414" duration="5000" />
       <workItem from="1512075036511" duration="13731000" />
-      <workItem from="1512160352751" duration="12415000" />
+      <workItem from="1512160352751" duration="14525000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1509037822775</created>
@@ -547,11 +547,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512171719127</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fixed dumb mistakes">
+      <created>1512173503786</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1512173503786</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107868000" />
+    <option name="totallyTimeSpent" value="109978000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1613" height="873" extended-state="6" />
@@ -635,7 +642,8 @@
     <MESSAGE value="fixed four of a kind and triple" />
     <MESSAGE value="higest val and compare to partially done" />
     <MESSAGE value="compare to" />
-    <option name="LAST_COMMIT_MESSAGE" value="compare to" />
+    <MESSAGE value="fixed dumb mistakes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed dumb mistakes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -953,20 +961,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/poker/Card.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="101" column="15" lean-forward="false" selection-start-line="101" selection-start-column="15" selection-end-line="101" selection-end-column="15" />
+        <state relative-caret-position="18">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/poker/Hand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="418" column="21" lean-forward="false" selection-start-line="418" selection-start-column="21" selection-end-line="418" selection-end-column="21" />
+        <state relative-caret-position="470">
+          <caret line="407" column="39" lean-forward="false" selection-start-line="407" selection-start-column="39" selection-end-line="407" selection-end-column="39" />
           <folding>
-            <element signature="method#numPairs#0;class#Hand#0" expanded="false" />
             <element signature="method#hasFourOfAKind#0;class#Hand#0" expanded="false" />
-            <element signature="method#highestValue#0;class#Hand#0" expanded="false" />
           </folding>
         </state>
       </provider>
