@@ -560,6 +560,7 @@ public class Hand {
             count = 0;
 
         }
+        return -1;
     }
 
     private int quadVal() {
@@ -577,6 +578,7 @@ public class Hand {
             count = 0;
 
         }
+        return -1;
     }
 
     private int[] nonTripVal() {

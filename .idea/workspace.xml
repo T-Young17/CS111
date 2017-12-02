@@ -18,8 +18,8 @@
       <file leaf-file-name="Hand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/poker/Hand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="984">
-              <caret line="589" column="56" lean-forward="false" selection-start-line="589" selection-start-column="56" selection-end-line="589" selection-end-column="56" />
+            <state relative-caret-position="560">
+              <caret line="594" column="38" lean-forward="true" selection-start-line="594" selection-start-column="38" selection-end-line="594" selection-end-column="38" />
               <folding>
                 <element signature="e#7062#7063#0" expanded="true" />
                 <element signature="e#7116#7117#0" expanded="true" />
@@ -59,7 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getCard</find>
       <find>getV</find>
       <find>getsuit</find>
       <find>suit</find>
@@ -89,6 +88,7 @@
       <find>maxArr2</find>
       <find>tripval</find>
       <find>nontripval</find>
+      <find>return -1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -418,7 +418,7 @@
       <workItem from="1511893439414" duration="5000" />
       <workItem from="1512075036511" duration="13731000" />
       <workItem from="1512160352751" duration="14598000" />
-      <workItem from="1512177770731" duration="9102000" />
+      <workItem from="1512177770731" duration="9176000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1509037822775</created>
@@ -595,11 +595,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512184845170</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="nearly done">
+      <created>1512188859748</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1512188859748</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119153000" />
+    <option name="totallyTimeSpent" value="119227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1613" height="873" extended-state="6" />
@@ -686,7 +693,8 @@
     <MESSAGE value="fixed dumb mistakes" />
     <MESSAGE value="fixed compare to" />
     <MESSAGE value="epitome of stress" />
-    <option name="LAST_COMMIT_MESSAGE" value="epitome of stress" />
+    <MESSAGE value="nearly done" />
+    <option name="LAST_COMMIT_MESSAGE" value="nearly done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1013,8 +1021,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/poker/Hand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="984">
-          <caret line="589" column="56" lean-forward="false" selection-start-line="589" selection-start-column="56" selection-end-line="589" selection-end-column="56" />
+        <state relative-caret-position="560">
+          <caret line="594" column="38" lean-forward="true" selection-start-line="594" selection-start-column="38" selection-end-line="594" selection-end-column="38" />
           <folding>
             <element signature="e#7062#7063#0" expanded="true" />
             <element signature="e#7116#7117#0" expanded="true" />
